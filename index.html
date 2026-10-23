@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MIRAGE · il film</title>
+<meta name="description" content="MIRAGE, il film dimostrativo di Visione Unica: una villa immaginaria nel deserto, dallo schizzo alla casa abitata.">
+<meta property="og:title" content="MIRAGE · il film">
+<meta property="og:description" content="Progetto dimostrativo di Visione Unica · Doina Braescu">
+<meta property="og:image" content="https://doinabraescu.github.io/mirage/poster.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Montserrat:wght@300;400;500&display=swap">
+<style>
+/* Layout: one dark screening room — title, the film, then the five moments as a seekable index and the credits. */
+:root {
+  color-scheme: dark;
+  --notte: #0A111C;
+  --notte-2: #142236;
+  --ink: #EDE8E0;
+  --muted: #9AA6B6;
+  --oro: #E6C77A;
+  --linea: rgba(230,199,122,0.30);
+  --display: "Cinzel", "Times New Roman", serif;
+  --text: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+html { background: var(--notte); }
+body {
+  margin: 0;
+  background: var(--notte); color: var(--ink); font-family: var(--text); font-weight: 300;
+  font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+  overflow-x: hidden;
+}
+.page { max-width: 1180px; margin: 0 auto; padding-block: clamp(40px, 7vw, 88px) 0; position: relative; }
+.waves { position: absolute; left: 50%; transform: translateX(-50%); width: 1920px; max-width: none; top: 10px; opacity: .55; pointer-events: none; }
+header { position: relative; text-align: center; display: grid; justify-items: center; gap: 14px; }
+.mark { width: 56px; height: 56px; border: 1px solid var(--oro); border-radius: 50%; display: grid; place-items: center; font-family: var(--display); color: var(--oro); font-size: 26px; }
+.eyebrow { font-size: 12px; letter-spacing: .42em; text-transform: uppercase; color: var(--muted); margin: 0; }
+h1 { font-family: var(--display); font-weight: 500; color: var(--oro); font-size: clamp(44px, 9vw, 104px); letter-spacing: .14em; line-height: 1; margin: 0; text-wrap: balance; }
+.tag { margin: 0; color: var(--ink); font-size: 17px; }
+.screen { position: relative; margin-top: clamp(28px, 5vw, 56px); border: 1px solid var(--linea); background: #000; }
+video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; max-width: 100%; background: #000; }
+.index { margin-top: 36px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--linea); }
+.index button {
+  all: unset; cursor: pointer; padding: 18px 14px 18px 0; display: grid; gap: 4px; min-width: 0;
+  border-bottom: 1px solid transparent; transition: border-color .2s ease;
+}
+.index button:hover, .index button[aria-current="true"] { border-bottom-color: var(--oro); }
+.index button:focus-visible { outline: 2px solid var(--oro); outline-offset: 4px; }
+.index .t { font-size: 12px; letter-spacing: .2em; color: var(--muted); font-variant-numeric: tabular-nums; }
+.index .n { font-family: var(--display); color: var(--oro); font-size: 20px; letter-spacing: .08em; }
+.index .d { font-size: 13px; color: var(--muted); }
+.about { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--linea); }
+.about h2 { font-family: var(--display); font-weight: 400; color: var(--oro); font-size: 26px; letter-spacing: .1em; margin: 0 0 12px; }
+.about p { margin: 0; max-width: 62ch; }
+.contact { display: grid; gap: 10px; align-content: start; }
+.contact .who { font-family: var(--display); font-size: 20px; letter-spacing: .08em; color: var(--ink); }
+.contact .line { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.contact .val { user-select: all; color: var(--ink); font-weight: 400; }
+.copy { all: unset; cursor: pointer; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--oro); border: 1px solid var(--linea); padding: 4px 10px; }
+.copy:focus-visible { outline: 2px solid var(--oro); outline-offset: 2px; }
+footer { margin-top: 56px; padding-block: 24px 48px; border-top: 1px solid var(--linea); font-size: 12px; line-height: 1.6; color: var(--muted); }
+@media (max-width: 820px) {
+  .index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .about { grid-template-columns: 1fr; gap: 32px; }
+  .waves { width: 1200px; top: 30px; }
+}
+@media (max-width: 420px) { .index { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .index button { transition: none; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <img class="waves" src="waves.svg" alt="">
+  <header>
+    <div class="mark" aria-hidden="true">M</div>
+    <p class="eyebrow">Visione Unica · Caso studio</p>
+    <h1>MIRAGE</h1>
+    <p class="tag">Residenze d’autore nel deserto. Il film, 50 secondi.</p>
+  </header>
+
+  <div class="screen">
+    <video id="film" controls playsinline preload="metadata" poster="poster.jpg">
+      <source src="mirage-film.mp4" type="video/mp4">
+      Il tuo browser non riesce a riprodurre il video.
+    </video>
+  </div>
+
+  <nav class="index" aria-label="Momenti del film">
+    <button type="button" data-t="0"><span class="t">0:00</span><span class="n">Segno</span><span class="d">La piantina tra le stelle</span></button>
+    <button type="button" data-t="4.5"><span class="t">0:04</span><span class="n">Forma</span><span class="d">La casa si costruisce</span></button>
+    <button type="button" data-t="11.5"><span class="t">0:11</span><span class="n">Silenzio</span><span class="d">L’arrivo nel deserto</span></button>
+    <button type="button" data-t="16"><span class="t">0:16</span><span class="n">Casa</span><span class="d">L’ingresso e la terrazza</span></button>
+    <button type="button" data-t="24.8"><span class="t">0:25</span><span class="n">Interni</span><span class="d">Living, cucina, suite</span></button>
+    <button type="button" data-t="38.2"><span class="t">0:38</span><span class="n">Mirage</span><span class="d">Il nome dietro le mesas</span></button>
+  </nav>
+
+  <section class="about">
+    <div>
+      <h2>Una villa raccontata prima di esistere</h2>
+      <p>MIRAGE è una villa immaginaria nel deserto, creata per mostrare il Metodo Visione Unica: una sola direzione visiva per immagini, film e sito. Il film segue il racconto in cinque tempi, dal disegno architettonico alla casa abitata, con musica originale continua.</p>
+    </div>
+    <div class="contact">
+      <p class="who">Doina Braescu · Visione Unica</p>
+      <div class="line"><span class="val" id="mail">doinabraescu@yahoo.com</span><button class="copy" type="button" data-copy="mail">Copia</button></div>
+      <div class="line"><span class="val" id="tel">+39 333 111 2733</span><button class="copy" type="button" data-copy="tel">Copia</button></div>
+    </div>
+  </section>
+
+  <footer>Progetto dimostrativo a cura di Doina Braescu · Visione Unica. Immagini e video sono visualizzazioni concettuali, non fotografie di un immobile reale. Dati indicativi.</footer>
+</div>
+
+<script>
+(function () {
+  var v = document.getElementById('film');
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.index button'));
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      try { v.currentTime = parseFloat(b.dataset.t); var p = v.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
+    });
+  });
+  v.addEventListener('timeupdate', function () {
+    var t = v.currentTime, cur = null;
+    btns.forEach(function (b) { if (t >= parseFloat(b.dataset.t) - 0.05) cur = b; });
+    btns.forEach(function (b) { b.setAttribute('aria-current', b === cur ? 'true' : 'false'); });
+  });
+  document.querySelectorAll('.copy').forEach(function (c) {
+    c.addEventListener('click', function () {
+      var el = document.getElementById(c.dataset.copy), txt = el.textContent;
+      var done = function () { c.textContent = 'Copiato'; setTimeout(function () { c.textContent = 'Copia'; }, 1600); };
+      var select = function () { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); };
+      try { navigator.clipboard.writeText(txt).then(done, select); } catch (e) { select(); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
